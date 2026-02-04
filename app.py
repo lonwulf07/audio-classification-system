@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import io
 from PIL import Image
 from tensorflow.keras.models import load_model
+import tensorflow as tf
 
 # --------------------
 # SETTINGS
@@ -36,7 +37,7 @@ plt.switch_backend("Agg")
 
 @st.cache_resource
 def load_cnn():
-    return load_model(MODEL_PATH)
+    return tf.keras.models.load_model(MODEL_PATH)
 
 model = load_cnn()
 
